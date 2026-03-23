@@ -363,3 +363,20 @@ max-width: 250px;
   }
 }
 
+
+.revisi-label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff5252; /* merah/revisi */
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border-top-right-radius: 12px; /* sesuai sudut card */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+
+
