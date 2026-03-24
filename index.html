@@ -1,154 +1,410 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio | Canva Creator</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Putra Maulana Yusuf | Canva Creator Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #9ACD32; /* YellowGreen */
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text-light: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(154, 205, 50, 0.1) 0%, rgba(18, 18, 18, 1) 100%);
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .hero .highlight {
+            color: var(--primary-color);
+            -webkit-text-stroke: 1px var(--primary-color);
+            -webkit-text-fill-color: transparent;
+        }
+
+        .badge-dev {
+            background-color: var(--primary-color);
+            color: #000;
+            font-weight: 700;
+            padding: 8px 20px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        /* Portfolio Categories */
+        .section-title {
+            font-weight: 800;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title::after {
+            content: "";
+            height: 4px;
+            flex-grow: 1;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .portfolio-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #333;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            margin-bottom: 30px;
+        }
+
+        .portfolio-card:hover {
+            transform: scale(1.03);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 30px rgba(154, 205, 50, 0.2);
+        }
+
+             /* Perubahan agar kotak mengikuti bentuk gambar */
+        .portfolio-card img {
+            width: 100%;
+            height: auto; /* Gambar akan mengikuti tinggi aslinya */
+            display: block;
+            filter: grayscale(20%);
+            transition: 0.4s;
+        }
+
+        /* Opsional: Membuat baris gambar lebih rapi jika tingginya beda-beda */
+        .row-masonry {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+
+        .portfolio-card:hover img {
+            filter: grayscale(0%);
+        }
+
+        .card-info {
+            padding: 20px;
+        }
+
+        /* Video/Animation Styling */
+        .video-container {
+            position: relative;
+            padding-bottom: 125%; /* Ratio 4:5 untuk Instagram Reels/Animation */
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .video-container iframe, .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        footer {
+            padding: 60px 0;
+            border-top: 1px solid #333;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="container nav-wrapper">
-      <div class="logo">PUTRA</div>
-      <nav>
-        <ul class="nav-menu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+    <section class="hero">
+        <div class="container" data-aos="zoom-in">
+            <span class="badge-dev mb-3 d-inline-block">Canva Creator Portfolio</span>
+            <h1>PUTRA <span class="highlight">MAULANA</span></h1>
+            <p class="lead text-secondary">programming Student & Graphic Designer Specializing in High-Conversion Templates</p>
+        </div>
+    </section>
+    
+    <section class="py-5" style="background: rgba(255, 255, 255, 0.02);">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-7" data-aos="fade-right">
+                <h2 class="section-title">About Me</h2>
+                <p class="text-secondary mb-4">
+                    Hallo! I'am <strong>Putra Maulana Yusuf</strong>, a creative designer and web developer based in Jember. Currently, I am studying at <strong>SMK PGRI 05 Jember</strong> Software Engineering (RPL) major, where I honed my logical and aesthetic skills simultaneously.
+                </p>
+                <div class="row g-3 mb-4">
+                    <div class="col-6">
+                        <h6 class="fw-bold text-primary">Technical Skills</h6>
+                        <small class="text-secondary d-block">HTML, CSS, JavaScript, PHP, C#, MySQL, & Dart.</small>
+                    </div>
+                    <div class="col-6">
+                        <h6 class="fw-bold text-primary">Frameworks</h6>
+                        <small class="text-secondary d-block">Laravel & Flutter.</small>
+                    </div>
+                </div>
+                <p class="text-secondary">
+                    Besides programming, I have a great passion in the world of visual design using <strong>Canva</strong> dan <strong>Ibis Paint</strong>. My experience as a <strong>CapCut Creator</strong> and writers on Japanese platforms, <strong>Shosetsuka ni Naro</strong>, helped me understand how to build a narrative visual yang menarik bagi audiens global.
+                </p>
+            </div>
+
+            <div class="col-md-5 mt-4 mt-md-0" data-aos="fade-left">
+                <div class="position-relative mx-auto" style="max-width: 350px;">
+                    <div style="aspect-ratio: 1/1; overflow: hidden; border-radius: 30px; border: 4px solid var(--primary-color);">
+                        <img src="profile.jpg" alt="Putra Maulana Yusuf" class="w-100 h-100" style="object-fit: cover;">
+                    </div>
+                    <div class="position-absolute bottom-0 start-0 translate-middle-y bg-primary p-3 rounded-circle d-none d-md-block" style="width: 20px; height: 20px;"></div>
+                </div>
+            </div>
+        </div>
     </div>
-  </header>
-
-  <!-- HOME / HERO -->
-  <section class="hero" id="home">
-    <div class="container hero-wrapper">
-
-      <!-- LEFT TEXT -->
-      <div class="hero-text">
-        <span class="hero-label">CANVA CREATOR</span>
-        <h1 id="typing-text"></h1>
-        <p id="rotating-text">•SocialMedia •Elements •Presentation •CharacterIllustrator  •GraphicDesign •poster •Writter</p>
-        <a href="#portfolio" class="btn-primary">View My Portfolio</a>
-      </div>
-    
-
-      <!-- RIGHT IMAGE -->
-      <div class="hero-image">
-        <img src="profile.jpg" alt="Profile Photo">
-      </div>
-
-    </div>
-    
-    
-  </section>
-  
-          <!-- ABOUT ME -->
-<section id="about" class="about">
-  <div class="container about-wrapper">
-    
-    <div class="about-text">
-      <h2>About Me</h2>
-      <p>
-        I am a Canva template designer focused on creating story-driven visual content
-        for writers, storytellers, and digital creators. My designs combine minimalism,
-        emotional tone, and structured layouts to help ideas communicate clearly.
-      </p>
-      <p>
-        I specialize in novel promotion templates, character branding kits,
-        quote visuals, and social media storytelling layouts. Every template
-        is fully editable, cleanly layered, and ready for practical use.
-      </p>
-      -
-      <div class="about-highlights">
-        <div>✔ Story-Driven Design</div>
-        <div>✔ Clean & Minimal Layout</div>
-        <div>✔ Structured & Editable</div>
-        <div>✔ Consistent Visual Identity</div>
-      </div>
-    </div>
-    
-            
-  </section>
-<section id="portfolio" class="portfolio">
-  <div class="container">
-    <h2>Portfolio</h2>
-    <p>Here are my Canva templates designed for storytelling, social media, and visual branding.</p>
-
-    <div class="portfolio-grid">
-
-      <div class="portfolio-item">
-        <img src="design2.jpg">
-        <h3>PRESENTATION: Startup Pitch Deck</h3>
-        <a href="https://www.canva.com/design/DAHEQDJV17U/ZRyEpnPwu3xsdsz-ZVDViA/edit?utm_content=DAHEQDJV17U&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="btn-view">View Canva Template</a>
-      </div>
-
-      <div class="portfolio-item">
-        <img src="design3.jpg">
-        <h3>PRESENTATION: Marketing Plan Presentation</h3>
-        <a href="https://www.canva.com/design/DAHERS1eAP8/ehdsb-WSiBdtgetA7kCxCA/edit?utm_content=DAHERS1eAP8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="btn-view">View Canva Template</a>
-         <div class="revisi-label">Revision</div>
-      </div>
-
-      <div class="portfolio-item">
-        <img src="design4.jpg">
-        <h3>INSTAGRAM CAROUSEL: Business Content menu food</h3>
-        <a href="https://www.canva.com/design/DAHEHJc5Eag/GMrZqhDFVtlQKoVaMfCEeQ/edit?utm_content=DAHEHJc5Eag&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="btn-view">View Canva Template</a>
-      </div>
-
-      <div class="portfolio-item">
-        <img src="design6.jpg">
-        <h3>INSTAGRAM CARROUSEL: Business Tips</h3>
-        <a href="https://www.canva.com/design/DAHEFxiZ8Sw/08jUyharY_Jaa6K-Y5UyxQ/edit?utm_content=DAHEFxiZ8Sw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="btn-view">View Canva Template</a>
-      </div>
-
-      <div class="portfolio-item">
-        <img src="design7.jpg">
-        <h3>RESUME: Modern Professional Resume</h3>
-        <a href="https://www.canva.com/design/DAHERpy5U2Y/3onI_BHwhBYrZ9JoDzB1Gg/edit?utm_content=DAHERpy5U2Y&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="btn-view">View Canva Template</a>
-      </div>
-
-      <div class="portfolio-item">
-        <img src="design5.jpg">
-        <h3>RESUME: CV</h3>
-        <a href="https://www.canva.com/design/DAHEAJK3l9c/jhC-UJ8d2lbFE7oSHV69ug/edit?utm_content=DAHEAJK3l9c&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="btn-view">View Canva Template</a>
-                 <div class="revisi-label">Revision</div>
-      </div>
-
-      <div class="portfolio-item">
-        <img src="design9.jpg">
-        <h3>PLANNER: Study Planner</h3>
-        <a href="https://www.canva.com/design/DAHERzMYe0Y/bECNmL_q0UwxFBLx8djlBg/edit?utm_content=DAHERzMYe0Y&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="btn-view">View Canva Template</a>
-      </div>
-
-      <div class="portfolio-item">
-        <img src="design10.jpg">
-        <h3>PLANNER: Weekly Planner</h3>
-        <a href="https://www.canva.com/design/DAHER0YZbqM/4DRz6s1AMRtYaT8JxfQZvw/edit?utm_content=DAHER0YZbqM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="btn-view">View Canva Template</a>
-      </div>
-
-      <div class="portfolio-item">
-        <img src="design1.png">
-        <h3>INSTAGRAM STORY: Travel Graphic Content Template</h3>
-        <a href="https://www.canva.com/design/DAHCk9HCxtY/2Qvdx5B3WfORGCB6Rkf7IQ/edit?utm_content=DAHCk9HCxtY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="btn-view">View Canva Template</a>
-      </div>
-
-      <div class="portfolio-item">
-        <img src="design8.jpg">
-        <h3>EBOOK: Book Cover</h3>
-        <a href="https://www.canva.com/design/DAHEXVvGCuo/MX8Gxl0b1zBUbpEU3izj1A/edit?utm_content=DAHEXVvGCuo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="btn-view">View Canva Template</a>
-         <div class="revisi-label">New</div>
-      </div>
-
-    </div>
-  </div>
 </section>
-  
-  <script src="main.js"></script>
 
+
+    <div class="container mb-5">
+        
+        <section class="py-5">
+            <h2 class="section-title" data-aos="fade-right">Instagram Carousel</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="portfolio-card">
+                        <img src="design9.png" alt="Project 1">
+                        <div class="card-info">
+                            <h5 class="fw-bold m-0">Scrapbook</h5>
+                            <small class="text-secondary"> Slides Seamless Design</small>
+                                <small class="text-secondary">Click the link below to go to Canva design</small>
+    <br>
+    <a href="https://www.canva.com/design/DAHE010eCC4/ru6QZ4Eb9SO3dWI8iZZ_TA/edit?utm_content=DAHE010eCC4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="btn-canva-outline">
+        View on Canva
+    </a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+                            <div class="row">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="portfolio-card">
+                        <img src="design4.jpg" alt="Project 1">
+                        <div class="card-info">
+                            <h5 class="fw-bold m-0">Minimalist Business Kit</h5>
+                            <small class="text-secondary">5 Slides Seamless Design</small>
+                                <small class="text-secondary">Click the link below to go to Canva design</small>
+    <br>
+    <a href="https://www.canva.com/design/DAHEHJc5Eag/GMrZqhDFVtlQKoVaMfCEeQ/edit?utm_content=DAHEHJc5Eag&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="btn-canva-outline">
+        View on Canva
+    </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="py-5">
+    <h2 class="section-title" data-aos="fade-right">Professional Presentation Decks</h2>
+    <p class="text-secondary mb-4">High-impact presentation designs tailored for business growth and strategic planning.</p>
+    
+    <div class="row g-4">
+        <div class="col-md-6" data-aos="flip-up">
+            <div class="portfolio-card">
+                <img src="design2.jpg" alt="Startup Pitch Deck" style="height: auto;">
+                <div class="card-info">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="fw-bold m-0 text-primary">Startup Pitch Deck</h5>
+                            <small class="text-secondary">Investor-Ready Visuals & Storytelling</small>
+                        </div>
+                        <span class="badge bg-dark border border-secondary text-primary">9 Slides</span>
+                    </div>
+                    <p class="mt-3 small text-secondary">Focus on data clarity, modern graphs, and a problem-to-solution presentation structure to attract investors.</p>
+                        <small class="text-secondary">Click the link below to go to Canva design</small>
+    <br>
+    <a href="https://www.canva.com/design/DAHEQDJV17U/ZRyEpnPwu3xsdsz-ZVDViA/edit?utm_content=DAHEQDJV17U&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="btn-canva-outline">
+        View on Canva
+    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6" data-aos="flip-up" data-aos-delay="100">
+            <div class="portfolio-card">
+                <img src="design3.jpg" alt="Marketing Plan Presentation" style="height: auto;">
+                <div class="card-info">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="fw-bold m-0 text-primary">Marketing Plan 2026</h5>
+                            <small class="text-secondary">Strategic Branding & Market Analysis</small>
+                        </div>
+                        <span class="badge bg-dark border border-secondary text-primary">6 Slides</span>
+                    </div>
+                    <p class="mt-3 small text-secondary">Designs that emphasize campaign strategy, competitor analysis, and aesthetic marketing execution plans.</p>
+                        <small class="text-secondary">Click the link below to go to Canva design</small>
+    <br>
+    <a href="https://www.canva.com/design/DAHERS1eAP8/ehdsb-WSiBdtgetA7kCxCA/edit?utm_content=DAHERS1eAP8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="btn-canva-outline">
+        View on Canva
+    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <h2 class="section-title" data-aos="fade-right">Digital E-book: Fashion Lookbook</h2>
+    <p class="text-secondary mb-4">A comprehensive 9-slide digital lookbook focusing on modern urban aesthetics and layout consistency.</p>
+    
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 g-3">
+        <div class="col" data-aos="zoom-in">
+            <div class="portfolio-card">
+                <img src="design8.jpg" alt="Cover Page">
+                <div class="card-info py-2 px-3">
+                    <small class="text-primary fw-bold">Fashion book </small>
+                        <small class="text-secondary">Click the link below to go to Canva design</small>
+    <br>
+            <a href="https://www.canva.com/design/DAHEXVvGCuo/MX8Gxl0b1zBUbpEU3izj1A/edit?utm_content=DAHEXVvGCuo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="btn-view" target="_blank" class="btn-canva-outline">
+        View on Canva
+            </a>
+                </div>
+            </div>
+        </div>
+        <div class="col" data-aos="zoom-in" data-aos-delay="50">
+            <div class="portfolio-card">
+                <img src="design10.png" alt="Editorial Page">
+                <div class="card-info py-2 px-3">
+                    <small class="text-primary fw-bold">Cover book Story</small>
+                        <small class="text-secondary">Click the link below to go to Canva design</small>
+    <br>
+    <a href="https://www.canva.com/design/DAHEHAZr-I8/o5lgVRpbgC6GJYgD7iCqNg/edit?utm_content=DAHEHAZr-I8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="btn-canva-outline">
+        View on Canva
+    </a>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+        
+</section>
+
+
+
+        <section class="py-5">
+            <h2 class="section-title" data-aos="fade-right">Motion & Animation</h2>
+            <div class="row align-items-center">
+                <div class="col-md-5" data-aos="fade-right">
+                    <div class="portfolio-card p-2">
+                        <div class="video-container text-center bg-dark d-flex align-items-center justify-content-center">
+ <video class="w-100 h-100" controls autoplay muted loop>
+        <source src="animation.mp4" type="video/mp4">
+        Browser kamu tidak mendukung video.
+    </video>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7 ps-md-5" data-aos="fade-left">
+                    <h3 class="fw-bold mb-3" style="color: var(--primary-color);">Dynamic Templates</h3>
+                    <p class="text-secondary">I combined static graphic elements with smooth transition animations in Canva to create higher engagement with my audience..</p>
+                    <ul class="list-unstyled text-secondary">
+                        <li>✓ Smooth Transition</li>
+                        <li>✓ Text Animation</li>
+                        <li>✓ 1080x1350 High Quality</li>
+                    </ul>
+                </div>
+            </div>
+                <small class="text-secondary">Click the link below to go to Canva design</small>
+    <br>
+    <a href="https://www.canva.com/design/DAHE1K81Om8/BsHPNO0o10qRHb4p74qz3A/edit?utm_content=DAHE1K81Om8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="btn-canva-outline">
+        View on Canva
+    </a>
+        </section>
+        
+        <section class="py-5">
+    <h2 class="section-title" data-aos="fade-right">More</h2>
+    <p class="text-secondary mb-4">Explore other creative works, from personal branding to travel storytelling.</p>
+    
+    <div class="row g-4">
+        <div class="col-md-6" data-aos="fade-up">
+            <div class="portfolio-card">
+                <img src="design1.png" alt="Travel Story Design" style="height: auto;">
+                <div class="card-info">
+                    <h5 class="fw-bold m-0 text-primary">Travel Storytelling</h5>
+                    <small class="text-secondary">Multi-element Layout Design</small>
+                    <p class="mt-3 small text-secondary">
+                        A story design that combines elements of interactive maps, portraits, vehicles (motorbikes), and beautiful scenery in one harmonious visual composition.
+                    </p>
+                        <small class="text-secondary">Click the link below to go to Canva design</small>
+    <br>
+    <a href="https://www.canva.com/design/DAHCk9HCxtY/2Qvdx5B3WfORGCB6Rkf7IQ/edit?utm_content=DAHCk9HCxtY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="btn-view" target="_blank" class="btn-canva-outline">
+        View on Canva
+    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="portfolio-card">
+                <img src="design7.jpg" alt="Professional Resume Design" style="height: auto;">
+                <div class="card-info">
+                    <h5 class="fw-bold m-0 text-primary">Professional Resume</h5>
+                    <small class="text-secondary">2-Page Minimalist Career Profile</small>
+                    <p class="mt-3 small text-secondary">
+                        A two-page resume designed to highlight both technical experience (RPL) and creative skills. Ensures information is legible yet aesthetically pleasing.
+                    </p>
+                    <div class="card-info">
+
+    <small class="text-secondary">Click the link below to go to Canva design</small>
+    <br>
+    <a href="https://www.canva.com/design/DAHERpy5U2Y/3onI_BHwhBYrZ9JoDzB1Gg/edit?utm_content=DAHERpy5U2Y&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="btn-canva-outline">
+        View on Canva
+    </a>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <p class="mb-0">Created by <strong>Putra Maulana Yusuf</strong></p>
+            <small class="text-secondary">Built for Professional Portfolio Submission • 2026</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
 </body>
-  </html>
+</html>
